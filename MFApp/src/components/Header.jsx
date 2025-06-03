@@ -9,13 +9,13 @@ const Header = () => {
             </div>            <ul className="nav">
                 <li><NavLink to="/" className={({isActive}) =>
                     isActive ? "active" : "" }>Home</NavLink></li>
-                
-                <li><NavLink to="/vue-js" className={({isActive}) =>
-                    isActive ? "active" : "" }>Vue App</NavLink></li>
-                
-                
-                <li><NavLink to="/to-do-app" className={({isActive}) =>
-                    isActive ? "active" : "" }>To Do List</NavLink></li>
+
+                <li><NavLink to="/cart-app" className={({isActive}) =>
+                    isActive ? "active" : "" }>Cart App</NavLink></li>
+
+
+                <li><NavLink to="/checkout" className={({isActive}) =>
+                    isActive ? "active" : "" }>Checkout</NavLink></li>
             </ul>
         </>
     )

@@ -20,12 +20,12 @@ const App = () => {
               element: <FoodList />
             },
             {
-              path: "/vue-js",
+              path: "/cart-app",
               element: <VeuJs />
             },
-           
+
             {
-              path: "/to-do-app",
+              path: "/checkout",
               element: <ProductList />
             }
           ]
