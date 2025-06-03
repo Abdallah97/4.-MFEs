@@ -1,11 +1,11 @@
 import React, {lazy, Suspense} from "react";
-const TodoApp = lazy(() => import("TodoAppHost/TodoApp"));
+const Checkout = lazy(() => import("CheckoutHost/Checkout"));
 
 const ProductList = () => {
     return (
         <div className="todo-list-container">
             <Suspense fallback={null}>
-            <TodoApp />
+            <Checkout />
             </Suspense>
         </div>
     )

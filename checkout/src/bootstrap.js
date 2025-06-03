@@ -1,13 +1,13 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import TodoApp from "./TodoApp.jsx";
+import Checkout from "./Checkout.jsx";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <TodoApp />
+    <Checkout />
   </StrictMode>
 );

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./TodoApp.css";
+import "./Checkout.css";
 
-const TodoApp = () => {
+const Checkout = () => {
   const [cartItems, setCartItems] = useState([
     { id: 1, name: "Classic Margherita Pizza", price: 299, quantity: 1, image: "🍕" },
     { id: 2, name: "Chicken Biryani", price: 399, quantity: 2, image: "🍛" },
@@ -245,5 +245,5 @@ const CustomerForm = ({ customerInfo, onChange, onCheckout }) => {
   );
 };
 
-// Export as TodoApp for compatibility with existing imports
-export default TodoApp;
+// Export as Checkout for compatibility with existing imports
+export default Checkout;

@@ -81,7 +81,7 @@ new ModuleFederationPlugin({
     "ShortCardInHost": "commonComponents@http://localhost:3001/remoteEntry.js",
     
     // Application remotes
-    "TodoAppHost": "ToDoApp@http://localhost:3002/remoteEntry.js",
+    "CheckoutHost": "Checkout@http://localhost:3002/remoteEntry.js",
     "VueAppHost": "VueApp@http://localhost:3003/remoteEntry.js", 
     "JsAppHost": "JsApp@http://localhost:3004/remoteEntry.js"
   },
@@ -121,10 +121,10 @@ new ModuleFederationPlugin({
 ```javascript
 // to-do-list/webpack.config.js
 new ModuleFederationPlugin({
-  name: "ToDoApp",
+  name: "Checkout",
   filename: "remoteEntry.js",
   exposes: {
-    "./TodoApp": "./src/App.jsx"
+    "./Checkout": "./src/App.jsx"
   },
   shared: {
     react: { singleton: true },
@@ -167,7 +167,7 @@ The primary communication method using Webpack's Module Federation:
 
 ```javascript
 // Dynamic import of remote components
-const TodoApp = React.lazy(() => import("TodoAppHost/TodoApp"));
+const Checkout = React.lazy(() => import("CheckoutHost/Checkout"));
 const VueApp = React.lazy(() => import("VueAppHost/VueApp"));
 const CardDetails = React.lazy(() => import("DetailCardInHost/CardDetails"));
 ```
@@ -178,7 +178,7 @@ Passing data between host and remotes through React props:
 ```javascript
 // Host passes data to remote component
 <Suspense fallback={<div>Loading...</div>}>
-  <TodoApp 
+  <Checkout 
     initialTasks={hostData.tasks}
     onTaskUpdate={handleTaskUpdate}
     userId={currentUser.id}
@@ -422,7 +422,7 @@ npm start  # Port 3000
 
 # Update webpack.config.js for production URLs
 remotes: {
-  "TodoAppHost": "ToDoApp@https://todo.myapp.com/remoteEntry.js"
+  "CheckoutHost": "Checkout@https://todo.myapp.com/remoteEntry.js"
 }
 ```
 
@@ -565,19 +565,19 @@ class MicrofrontendErrorBoundary extends React.Component {
 ### 3. **Performance Optimization**
 ```javascript
 // Lazy loading with proper loading states
-const TodoApp = React.lazy(() => 
-  import("TodoAppHost/TodoApp").catch(() => {
+const Checkout = React.lazy(() => 
+  import("CheckoutHost/Checkout").catch(() => {
     return { default: () => <div>Failed to load Todo App</div> };
   })
 );
 
 // Preload critical components
-const preloadTodoApp = () => {
-  import("TodoAppHost/TodoApp");
+const preloadCheckout = () => {
+  import("CheckoutHost/Checkout");
 };
 
 // Trigger preload on hover or route prefetch
-<Link to="/todo-app" onMouseEnter={preloadTodoApp}>
+<Link to="/todo-app" onMouseEnter={preloadCheckout}>
   Todo App
 </Link>
 ```
@@ -589,7 +589,7 @@ const preloadTodoApp = () => {
 // E2E tests for full user journeys
 
 // Mock remote components in tests
-jest.mock("TodoAppHost/TodoApp", () => {
+jest.mock("CheckoutHost/Checkout", () => {
   return {
     default: ({ onTaskUpdate }) => (
       <div data-testid="mock-todo-app">

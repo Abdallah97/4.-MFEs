@@ -20,18 +20,14 @@ module.exports = {
       directory: path.resolve(__dirname, ".dist")
     },
     open: true,
-    port: 3000,
+    port: 3002,
     historyApiFallback: true
   },
   plugins: [new ModuleFederationPlugin({
-    name: "MFHost",
+    name: "Checkout",
     filename: "remoteEntry.js",
-    remotes: {
-      "DetailCardInHost": "commonComponents@http://localhost:3001/remoteEntry.js",
-      "ShortCardInHost": "commonComponents@http://localhost:3001/remoteEntry.js",
-      "ProductCardInHost": "commonComponents@http://localhost:3001/remoteEntry.js",
-      "CheckoutHost": "Checkout@http://localhost:3002/remoteEntry.js",
-      "VueAppHost": "VueApp@http://localhost:3003/remoteEntry.js"
+    exposes: {
+      "./Checkout": "/src/Checkout.jsx"
     },
     shared: ["react", "react-dom"]
   }), new MiniCssExtractPlugin(), new HtmlWebpackPlugin({

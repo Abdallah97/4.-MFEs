@@ -21,10 +21,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "ToDoApp",
+      name: "Checkout",
       filename: "remoteEntry.js",
       exposes: {
-        "./TodoApp": "/src/TodoApp.jsx"
+        "./Checkout": "/src/Checkout.jsx"
       },
       shared:["react", "react-dom"]
     }),
