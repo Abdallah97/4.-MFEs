@@ -1,0 +1,95 @@
+.header {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 8px 6px -6px #ccc;
+}
+
+.footer {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    box-shadow: 0px -5px 5px #ccc;
+    width: 99%;
+}
+
+.short-list-container, .detail-list-container, .todo-list-container, .product-list-container {
+    padding: 20px;
+}
+
+.short-list-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 20px 0;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.detail-list-container {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    margin: 20px 0;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.product-list-container {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    margin: 20px 0;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.product-list-container h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav li {
+    list-style-type: none;
+    display: inline-block;
+    width: 100px;
+    border: 1px solid #666;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Product grid styles for host app */
+.products-container {
+    padding: 20px;
+}
+
+.products-container h2 {
+    text-align: center;
+    color: #2d3748;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .products-container {
+        padding: 10px;
+    }
+}
+
+.active {
+    color: green;
+}
