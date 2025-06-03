@@ -15,7 +15,7 @@
     width: 99%;
 }
 
-.short-list-container, .detail-list-container, .todo-list-container, .product-list-container {
+.short-list-container, .detail-list-container, .checkout-list-container, .product-list-container {
     padding: 20px;
 }
 

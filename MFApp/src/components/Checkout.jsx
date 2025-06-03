@@ -1,9 +1,10 @@
 import React, {lazy, Suspense} from "react";
 const Checkout = lazy(() => import("CheckoutHost/Checkout"));
 
-const ProductList = () => {
+
+const CheckoutContainer = () => {   
     return (
-        <div className="todo-list-container">
+        <div className="">
             <Suspense fallback={null}>
             <Checkout />
             </Suspense>
@@ -11,4 +12,4 @@ const ProductList = () => {
     )
 }
 
-export default ProductList;
+export default CheckoutContainer;
