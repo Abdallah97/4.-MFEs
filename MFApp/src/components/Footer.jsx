@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <div className="footer">
-            Micro frontends demo 
-        </div>
+        <footer className="footer">
+            <p>Micro frontends demo - Modern Architecture</p>
+        </footer>
     )
 }
 

@@ -5,11 +5,13 @@ import Footer from "./Footer.jsx";
 
 const layout = () => {
     return (
-        <>
+        <div className="layout-container">
             <Header />
-            <Outlet />
+            <main className="main-content">
+                <Outlet />
+            </main>
             <Footer />
-        </>
+        </div>
     )
 }
 
