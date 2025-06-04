@@ -1,6 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense}  from "react";
 import LoadingIndicator from "./LoadingIndicator.jsx";
-const CardDeatils = lazy(() => import("DetailCardInHost/CardDetails"));
+const CardDetails = lazy(() => import("DetailCardInHost/CardDetails"));
 const CardShort = lazy(() => import("ShortCardInHost/CardShort"));
 
 const FoodList = () => {
@@ -77,7 +77,7 @@ const FoodList = () => {
                 ) : (
                     <Suspense fallback={<LoadingIndicator message="Loading components..." />}>
                         {detailItems.length > 0 ? detailItems.map(item => {
-                            return <CardDeatils key={item.id} data={item}></CardDeatils>
+                            return <CardDetails key={item.id} data={item}></CardDetails>
                         }) : (
                             <p className="no-data">No recipes available</p>
                         )}
